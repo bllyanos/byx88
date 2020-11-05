@@ -38,6 +38,8 @@ contract("Byx88", accounts => {
       console.log(balance);
 
       const take = await wallet.take("200000000000000000");
+      const trans1 = await wallet.getDeposit(1);
+      console.log(trans1);
 
       balance = await web3.eth.getBalance(wallet.address);
       console.log(balance);

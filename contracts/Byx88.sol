@@ -93,6 +93,20 @@ contract Byx88 {
         return 0;
     }
 
+    function getDeposit(uint256 id)
+        public
+        view
+        returns (
+            address payable sender,
+            string memory target, // gwallet account
+            uint256 amount, // in wei
+            Statuses status
+        )
+    {
+        Deposit storage d = deposits[id];
+        return (d.sender, d.target, d.amount, d.status);
+    }
+
     function setVersion(string memory newVersion) public restricted {
         version = newVersion;
     }
